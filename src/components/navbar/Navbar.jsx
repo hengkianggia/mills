@@ -9,6 +9,7 @@ import { FaCartPlus, FaSortDown, FaUser } from "react-icons/fa";
 
 import image from "@/assets/image-logo/Mills Secondary Logo.png";
 import Div from "../helper/Div";
+import SideModal from "../modal/SideModal";
 
 const navItem = [
   {
@@ -233,6 +234,7 @@ const navItem = [
 
 const Navbar = () => {
   const [navItemActive, setNavItemActive] = useState("");
+  const [modalSearch, setModalSearch] = useState(false);
 
   const navActive = (name) => {
     if (navItemActive === name) {
@@ -242,56 +244,59 @@ const Navbar = () => {
   }
 
   return (
-    <Div flex center fixed superTop full className={'bg-white w-full'}>
-      <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx">
-        {/* left */}
-        <GiHamburgerMenu size={16} className="lg:hidden" />
-        <Image src={image} width={80} className="cursor-pointer" />
+    <>
+      <Div flex center fixed superTop full className={"bg-white w-full"}>
+        <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx">
+          {/* left */}
+          <GiHamburgerMenu size={16} className="lg:hidden" />
+          <Image src={image} width={80} className="cursor-pointer" />
 
-        {/* center */}
-        <div className="flex justify-center h-full max-lg:hidden">
-          {navItem.map((item, index) => (
-            <div
-              key={index}
-              className="relative grid h-full px-3 text-xs uppercase transition-all cursor-pointer hover:bg-gray-me place-items-center"
-              onMouseEnter={navActive.bind(this, item.href)}
-              onMouseLeave={navActive.bind(this, "")}
-            >
-              <p>{item.name}</p>
-              {navItemActive === item.href && (
-                <div className="absolute left-0 uppercase top-16">
-                  {navItem[index].children.map((item, index) => (
-                    <div
-                      key={index}
-                      className="px-3 py-3 text-xs cursor-pointer min-w-[12vw] bg-gray-me"
-                    >
-                      {item.name}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* right */}
-        <div className="flex items-center gap-3">
-          <div className="flex cursor-pointer max-lg:hidden">
-            <FaUser size={16} />
-            <FaSortDown size={16} />
+          {/* center */}
+          <div className="flex justify-center h-full max-lg:hidden">
+            {navItem.map((item, index) => (
+              <div
+                key={index}
+                className="relative grid h-full px-3 text-xs uppercase transition-all cursor-pointer hover:bg-gray-me place-items-center"
+                onMouseEnter={navActive.bind(this, item.href)}
+                onMouseLeave={navActive.bind(this, "")}
+              >
+                <p>{item.name}</p>
+                {navItemActive === item.href && (
+                  <div className="absolute left-0 uppercase top-16">
+                    {navItem[index].children.map((item, index) => (
+                      <div
+                        key={index}
+                        className="px-3 py-3 text-xs cursor-pointer min-w-[12vw] bg-gray-me"
+                      >
+                        {item.name}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="relative cursor-pointer max-lg:hidden">
-            <FaCartPlus size={16} />
-            <div className="absolute -top-[9px] -right-2 px-[2px] rounded-sm bg-yellow-me text-xs font-semibold text-white">
-              0
+          {/* right */}
+          <div className="flex items-center gap-3">
+            <div className="flex cursor-pointer max-lg:hidden">
+              <FaUser size={16} />
+              <FaSortDown size={16} />
             </div>
-          </div>
 
-          <IoMdSearch size={20} className="cursor-pointer" />
-        </div>
-      </nav>
-    </Div>
+            <div className="relative cursor-pointer max-lg:hidden">
+              <FaCartPlus size={16} />
+              <div className="absolute -top-[9px] -right-2 px-[2px] rounded-sm bg-yellow-me text-xs font-semibold text-white">
+                0
+              </div>
+            </div>
+
+            <IoMdSearch size={20} className="cursor-pointer" onClick={() => setModalSearch(true)} />
+          </div>
+        </nav>
+      </Div>
+      <SideModal right show={modalSearch} onClose={() => setModalSearch(false)}/>
+    </>
   );
 };
 

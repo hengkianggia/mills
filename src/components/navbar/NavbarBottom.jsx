@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const NavbarBottom = () => {
   return (
-    <div className="fixed w-full h-[60px] flex justify-around pt-3 bg-white bottom-0 left-0 right-0 lg:hidden z-50">
+    <div className="fixed w-full h-[60px] flex justify-around pt-3 bg-white bottom-0 left-0 right-0 lg:hidden z-40">
       <Link href={"/"}>
         <div className="flex flex-col items-center gap-1">
           <AiFillHome size={18} />

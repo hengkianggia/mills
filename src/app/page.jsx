@@ -42,7 +42,6 @@ export default function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
-
       <Div center full>
         <div className="grid grid-cols-4 w-full gap-3 px-4 mt-16 max-w-screen-maxxx lg:gap-8">
           <ItemMenu className={"h-20 text-xs lg:h-64"} />
@@ -51,7 +50,6 @@ export default function Home() {
           <ItemMenu className={"h-20 text-xs lg:h-64"} />
         </div>
       </Div>
-
       {/* new product */}
       <Div center full>
         <div className="flex flex-col items-center mt-16 px-4 max-w-screen-maxxx">
@@ -73,7 +71,6 @@ export default function Home() {
           </Button>
         </div>
       </Div>
-
       {/* item gede */}
       <Div center full>
         <div className="grid grid-cols-1 w-full px-4 mt-16 gap-4 md:grid-cols-2 max-w-screen-maxxx">
@@ -99,7 +96,6 @@ export default function Home() {
           />
         </div>
       </Div>
-
       {/* brands */}
       <Div center full>
         <div className="flex flex-col items-center mt-10 px-4 max-w-screen-maxxx">
