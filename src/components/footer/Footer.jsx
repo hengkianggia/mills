@@ -13,7 +13,7 @@ const Footer = () => {
   const [openFooter, setOpenFooter] = useState("");
 
   return (
-    <footer className="flex flex-col items-center pb-20 lg:pb-6">
+    <footer className="flex flex-col items-center pb-20 mt-36 lg:pb-6">
       <div className="flex flex-col w-full px-3 pt-20 pb-6 mb-10 text-sm bg-gray-me md:px-6 lg:flex-row lg:px-[12.5vw] ">
         <div className="lg:w-[50%]">
           <h1 className="font-bold">Ikuti kami</h1>
@@ -27,7 +27,7 @@ const Footer = () => {
           />
           <Button
             className={
-              "mt-3 max-w-[40%] bg-yellow-me md:max-w-[20%] lg:max-w-[50%]"
+              "mt-3 max-w-[40%] bg-yellow-me md:max-w-[20%] lg:max-w-[50%] text-white"
             }
           >
             Langganan
