@@ -71,27 +71,13 @@ export default function Home() {
           </Button>
         </div>
       </Div>
+
       {/* item gede */}
       <Div center full>
         <div className="grid grid-cols-1 w-full px-4 mt-16 gap-4 md:grid-cols-2 max-w-screen-maxxx">
           <ItemMenu
             className={
-              "h-96 text-3xl font-semibold md:h-[400px] lg:border-none md:font-bold md:text-4xl lg:text-5xl lg:h-[500px]"
-            }
-          />
-          <ItemMenu
-            className={
-              "h-96 text-3xl font-semibold md:h-[400px] border-none md:font-bold md:text-4xl lg:h-[500px]"
-            }
-          />
-          <ItemMenu
-            className={
-              "h-96 text-3xl font-semibold md:h-[400px] border-none md:font-bold md:text-4xl lg:h-[500px]"
-            }
-          />
-          <ItemMenu
-            className={
-              "h-96 text-3xl font-semibold md:h-[400px] border-none md:font-bold md:text-4xl lg:h-[500px]"
+              "h-96 text-3xl font-semibold md:h-[400px] lg:border-none md:font-bold md:text-4xl lg:text-5xl lg:h-[600px]"
             }
           />
         </div>
@@ -138,7 +124,7 @@ const ItemMenu = ({ className }) => {
           className="absolute top-0 left-0 object-cover w-full h-full -z-10"
         />
         <Button
-          className={`px-0 md:px-2 md:border md:border-white md:text-lg md:font-normal max-w-[80%] uppercase text-white`}
+          className={`px-0 md:px-2 md:text-lg lg:text-3xl md:font-normal lg:font-bold max-w-[80%] uppercase text-white`}
         >
           dengan gaya bebas
         </Button>

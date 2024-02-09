@@ -10,6 +10,8 @@ import { FaCartPlus, FaSortDown, FaUser } from "react-icons/fa";
 import image from "@/assets/image-logo/Mills Secondary Logo.png";
 import Div from "../helper/Div";
 import SideModal from "../modal/SideModal";
+import SearchModal from "../modal/childSideModal/SearchModal";
+import CartModal from "../modal/childSideModal/CartModal";
 
 const navItem = [
   {
@@ -234,7 +236,7 @@ const navItem = [
 
 const Navbar = () => {
   const [navItemActive, setNavItemActive] = useState("");
-  const [modalSearch, setModalSearch] = useState(false);
+  const [showModal, setShowModal] = useState('');
 
   const navActive = (name) => {
     if (navItemActive === name) {
@@ -285,17 +287,35 @@ const Navbar = () => {
             </div>
 
             <div className="relative cursor-pointer max-lg:hidden">
-              <FaCartPlus size={16} />
+              <FaCartPlus size={16} onClick={() => setShowModal("cart")} />
               <div className="absolute -top-[9px] -right-2 px-[2px] rounded-sm bg-yellow-me text-xs font-semibold text-white">
                 0
               </div>
             </div>
 
-            <IoMdSearch size={20} className="cursor-pointer" onClick={() => setModalSearch(true)} />
+            <IoMdSearch
+              size={20}
+              className="cursor-pointer"
+              onClick={() => setShowModal("search")}
+            />
           </div>
         </nav>
       </Div>
-      <SideModal right show={modalSearch} onClose={() => setModalSearch(false)}/>
+
+      <SideModal
+        right
+        show={showModal == "search"}
+        onClose={() => setShowModal("")}
+      >
+        <SearchModal onClose={() => setShowModal("")} />
+      </SideModal>
+      <SideModal
+        right
+        show={showModal == "cart"}
+        onClose={() => setShowModal("")}
+      >
+        <CartModal onClose={() => setShowModal("")} />
+      </SideModal>
     </>
   );
 };
