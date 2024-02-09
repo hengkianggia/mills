@@ -78,23 +78,47 @@ const navItem = [
     children: [
       {
         name: "apparel",
-        href: "/",
+        href: "/apparel",
+        child: [
+          "football jersey",
+          "running short",
+          "cotton tee",
+          "polo shirt",
+          "base layer",
+        ],
       },
       {
         name: "shorts",
-        href: "/",
+        href: "/shorts",
+        child: [
+          "football short",
+          "short pants",
+          "long pants",
+          "running short",
+          "under layer",
+        ],
       },
       {
         name: "jacket",
-        href: "/",
+        href: "/jacket",
+        child: ["track jacker", "windbreaker"],
       },
       {
         name: "hodie",
-        href: "/",
+        href: "/hodie",
       },
       {
         name: "aksessoris",
-        href: "/",
+        href: "/aksessoris",
+        child: [
+          "bags",
+          "cap",
+          "headband",
+          "soccer bibs",
+          "socks",
+          "tumbler",
+          "wirst band",
+        ],
       },
     ],
   },
@@ -236,6 +260,7 @@ const navItem = [
 
 const Navbar = () => {
   const [navItemActive, setNavItemActive] = useState("");
+  const [subNavItemActive, setSubNavItemActive] = useState("");
   const [showModal, setShowModal] = useState('');
 
   const navActive = (name) => {
@@ -268,7 +293,9 @@ const Navbar = () => {
                     {navItem[index].children.map((item, index) => (
                       <div
                         key={index}
-                        className="px-3 py-3 text-xs cursor-pointer min-w-[12vw] bg-gray-me"
+                        className="px-3 py-3 text-xs cursor-pointer min-w-[12vw] bg-gray-me transition-all hover:bg-gray-200"
+                        onMouseEnter={() => setSubNavItemActive(item.href)}
+                        onMouseLeave={() => setSubNavItemActive("")}
                       >
                         {item.name}
                       </div>

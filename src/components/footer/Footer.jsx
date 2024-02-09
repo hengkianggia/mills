@@ -9,13 +9,17 @@ import { FaTiktok } from "react-icons/fa";
 import Button from "../button/Button";
 import classNames from "classnames";
 import Div from "../helper/Div";
+import Link from "next/link";
+import getWindowDimension from "@/utilis/getWindowDimension";
 
 const Footer = () => {
   const [openFooter, setOpenFooter] = useState("");
 
+  const {islaptopDimension} =getWindowDimension()
+
   return (
     <footer className="flex flex-col items-center pb-20 mt-36 lg:pb-6">
-      <Div center full className="bg-gray-100 mb-10">
+      <Div center full className="bg-gray-100 mb-10 py-16">
         <div className="flex flex-col w-full px-3 pt-20 pb-6 max-w-screen-maxxx text-sm md:px-6 lg:flex-row ">
           <div className="lg:w-[50%]">
             <h1 className="font-bold">Ikuti kami</h1>
@@ -42,7 +46,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="items-start w-full mt-5 space-y-3 lg:flex lg:mt-0 lg:justify-around">
+          <div className="items-start w-full mt-5 space-y-3 lg:flex lg:mt-0 lg:justify-around lg:space-y-0">
             <div>
               <div className="flex items-center justify-between w-full">
                 <h1 className="font-bold">Customer Services</h1>
@@ -54,20 +58,36 @@ const Footer = () => {
                   }
                 >
                   {openFooter === "customer-services" ? (
-                    <FaSortUp />
+                    <FaSortUp className="lg:hidden"/>
                   ) : (
-                    <FaSortDown />
+                    <FaSortDown className="lg:hidden"/>
                   )}
                 </div>
               </div>
+
+              {/* for mobile and tablet */}
               {openFooter == "customer-services" && (
-                <div className="mt-4 space-y-1">
-                  <p>FAQ</p>
-                  <p>Return</p>
-                  <p>Shipping</p>
-                  <p>Terms & Conditions</p>
+                <div className="mt-4 space-y-1 flex flex-col">
+                  <Link href={"/"}>About us</Link>
+                  <Link href={"/"}>How to order</Link>
+                  <Link href={"/"}>Shipping Methods</Link>
+                  <Link href={"/"}>Payment Methods</Link>
+                  <Link href={"/"}>FAQ</Link>
+                  <Link href={"/"}>Payment Confirmation</Link>
+                  <Link href={"/"}>Contact Us</Link>
                 </div>
               )}
+
+              {/* for desktop */}
+              <div className="mt-4 space-y-1 flex flex-col max-lg:hidden">
+                <Link href={"/"}>About us</Link>
+                <Link href={"/"}>How to order</Link>
+                <Link href={"/"}>Shipping Methods</Link>
+                <Link href={"/"}>Payment Methods</Link>
+                <Link href={"/"}>FAQ</Link>
+                <Link href={"/"}>Payment Confirmation</Link>
+                <Link href={"/"}>Contact Us</Link>
+              </div>
             </div>
 
             <div>
@@ -80,17 +100,36 @@ const Footer = () => {
                       : setOpenFooter("information")
                   }
                 >
-                  {openFooter === "information" ? <FaSortUp /> : <FaSortDown />}
+                  {openFooter === "information" ? (
+                    <FaSortUp className="lg:hidden" />
+                  ) : (
+                    <FaSortDown className="lg:hidden" />
+                  )}
                 </div>
               </div>
+              {/* for mobile and tablet */}
               {openFooter == "information" && (
-                <div className={classNames("mt-4 space-y-1")}>
-                  <p>FAQ</p>
-                  <p>Return</p>
-                  <p>Shipping</p>
-                  <p>Terms & Conditions</p>
+                <div className={classNames("mt-4 space-y-1 flex flex-col")}>
+                  <Link href={"/"}>About MILLS</Link>
+                  <Link href={"/"}>Blog</Link>
+                  <Link href={"/"}>Privacy Policy</Link>
+                  <Link href={"/"}>Exchange & Return</Link>
+                  <Link href={"/"}>Terms and Conditions</Link>
                 </div>
               )}
+
+              {/* fot laptop */}
+              <div
+                className={classNames(
+                  "mt-4 space-y-1 flex flex-col max-lg:hidden"
+                )}
+              >
+                <Link href={"/"}>About MILLS</Link>
+                <Link href={"/"}>Blog</Link>
+                <Link href={"/"}>Privacy Policy</Link>
+                <Link href={"/"}>Exchange & Return</Link>
+                <Link href={"/"}>Terms and Conditions</Link>
+              </div>
             </div>
           </div>
         </div>

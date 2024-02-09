@@ -10,11 +10,22 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-import gamabr from "../assets/pas foto.png";
 import Link from "next/link";
 import ItemProduct from "@/components/product-item/ItemProduct";
 import Button from "@/components/button/Button";
 import Div from "@/components/helper/Div";
+
+import football from "../assets/item-showcase/football.jpg";
+import footwear from "../assets/item-showcase/footwear.jpg";
+import men from "../assets/item-showcase/men.jpg";
+import timans from "../assets/item-showcase/timnas.jpg";
+
+const showcase = [
+  {title : 'indonesia national team', photo:timans},
+  {title : 'footwear', photo:footwear},
+  {title : 'football club', photo:football},
+  {title : 'men', photo:men},
+]
 
 
 const slider = [1,2,3,4,5,6,7,8,9,10];
@@ -42,14 +53,21 @@ export default function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* showcase small */}
       <Div center full>
         <div className="grid grid-cols-4 w-full gap-3 px-4 mt-16 max-w-screen-maxxx lg:gap-8">
-          <ItemMenu className={"h-20 text-xs lg:h-64"} />
-          <ItemMenu className={"h-20 text-xs lg:h-64"} />
-          <ItemMenu className={"h-20 text-xs lg:h-64"} />
-          <ItemMenu className={"h-20 text-xs lg:h-64"} />
+          {showcase.map((item, index) => (
+            <ItemMenu
+              className={"h-20 text-xs lg:h-64"}
+              text={item.title}
+              gamabr={item.photo}
+              key={index}
+            />
+          ))}
         </div>
       </Div>
+
       {/* new product */}
       <Div center full>
         <div className="flex flex-col items-center mt-16 px-4 max-w-screen-maxxx">
@@ -75,15 +93,20 @@ export default function Home() {
       {/* item gede */}
       <Div center full>
         <div className="grid grid-cols-1 w-full px-4 mt-16 gap-4 md:grid-cols-2 max-w-screen-maxxx">
-          <ItemMenu
-            className={
-              "h-96 text-3xl font-semibold md:h-[400px] lg:border-none md:font-bold md:text-4xl lg:text-5xl lg:h-[600px]"
-            }
-          />
+          {showcase.map((item, index) => (
+            <ItemMenu
+              key={index}
+              className={
+                "h-96 text-3xl font-semibold md:h-[400px] lg:border-none md:font-bold md:text-4xl lg:text-5xl lg:h-[600px]"
+              }
+              text={item.title}
+              gamabr={item.photo}
+            />
+          ))}
         </div>
       </Div>
       {/* brands */}
-      <Div center full>
+      <Div center full className="mt-8">
         <div className="flex flex-col items-center mt-10 px-4 max-w-screen-maxxx">
           <h1 className="text-xl">· BRANDS ·</h1>
 
@@ -107,7 +130,7 @@ export default function Home() {
   );
 }
 
-const ItemMenu = ({ className }) => {
+const ItemMenu = ({ className, gamabr,text }) => {
   return (
     <div
       className={`w-full h-20 grid place-items-center uppercase relative cursor-pointer md:h-44 ${className}`}
@@ -118,15 +141,15 @@ const ItemMenu = ({ className }) => {
       >
         <Image
           src={gamabr}
-          width={100}
-          height={100}
+          width={900}
+          height={900}
           alt="popo"
           className="absolute top-0 left-0 object-cover w-full h-full -z-10"
         />
         <Button
           className={`px-0 md:px-2 md:text-lg lg:text-3xl md:font-normal lg:font-bold max-w-[80%] uppercase text-white`}
         >
-          dengan gaya bebas
+          {text}
         </Button>
       </Link>
     </div>
