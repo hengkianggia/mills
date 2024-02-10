@@ -16,6 +16,7 @@ const [image, setImage] =useState(gambar2)
         src={image}
         width={700}
         height={700}
+        alt='popo'
         onMouseEnter={() => setImage(gambar)}
         onMouseLeave={() => setImage(gambar2)}
         className="object-cover w-full h-44 cursor-pointer md:h-44 lg:h-72"

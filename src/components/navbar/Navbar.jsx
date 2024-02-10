@@ -13,6 +13,7 @@ import SideModal from "../modal/SideModal";
 import SearchModal from "../modal/childSideModal/SearchModal";
 import CartModal from "../modal/childSideModal/CartModal";
 import Link from "next/link";
+import NavModal from "../modal/childSideModal/NavModal";
 
 const navItem = [
   {
@@ -275,9 +276,13 @@ const Navbar = () => {
       <Div flex center fixed superTop full className={"bg-white w-full"}>
         <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx">
           {/* left */}
-          <GiHamburgerMenu size={16} className="lg:hidden" />
+          <GiHamburgerMenu
+            size={16}
+            className="lg:hidden"
+            onClick={() => setShowModal("navbar")}
+          />
           <Link href={"/"}>
-            <Image src={image} width={80} className="cursor-pointer" />
+            <Image src={image} width={80} className="cursor-pointer" alt="popo"/>
           </Link>
 
           {/* center */}
@@ -331,6 +336,7 @@ const Navbar = () => {
         </nav>
       </Div>
 
+      {/* search modal */}
       <SideModal
         right
         show={showModal == "search"}
@@ -338,12 +344,23 @@ const Navbar = () => {
       >
         <SearchModal onClose={() => setShowModal("")} />
       </SideModal>
+
+      {/* cart modal */}
       <SideModal
         right
         show={showModal == "cart"}
         onClose={() => setShowModal("")}
       >
         <CartModal onClose={() => setShowModal("")} />
+      </SideModal>
+
+      {/* navbar modal */}
+      <SideModal
+        left
+        show={showModal == "navbar"}
+        onClose={() => setShowModal("")}
+      >
+        <NavModal onClose={() => setShowModal("")} data={navItem} />
       </SideModal>
     </>
   );

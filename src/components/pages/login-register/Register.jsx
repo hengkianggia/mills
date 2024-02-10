@@ -26,7 +26,7 @@ const Register = () => {
         <Div flex column itemsCenter full>
           <Card className={"items-start max-w-screen-maxxx w-full"}>
             <h1 className="font-bold text-sm mb-1">Akun Baru</h1>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-500">
               Dengan membuat akun Anda akan dapat berbelanja lebih cepat,
               dapatkan kupon dan poin dalam setiap pembelian, dapatkan pembaruan
               tentang barang dan promosi kami.
@@ -92,6 +92,7 @@ const Register = () => {
                   width={200}
                   height={200}
                   className="w-8 object-cover"
+                  alt="popo"
                 />
                 <p className="col-span-2">Daftar dengan Google</p>
               </Button>

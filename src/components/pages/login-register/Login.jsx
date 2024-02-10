@@ -22,13 +22,13 @@ const Login = ({title}) => {
     >
       <div className="w-full max-w-screen-maxxx px-4 pt-16 flex flex-col items-center gap-10 md:px-20 lg:max-w-[55vw]">
         {/* title */}
-<Title title={'Masuk'}/>
+        <Title title={'Masuk'}/>
 
         {/* card */}
         <Div flex column itemsCenter full>
           <Card className={"items-start max-w-screen-maxxx w-full"}>
             <h1 className="font-bold text-sm mb-1">Selamat Datang Kembali!!</h1>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-500">
               Masukkan Kredensial Anda Untuk Masuk
             </p>
 
@@ -82,6 +82,7 @@ const Login = ({title}) => {
                   src={google}
                   width={200}
                   height={200}
+                  alt='popo'
                   className="w-8 object-cover"
                 />
                 <p className="col-span-2">Login dengan Google</p>
