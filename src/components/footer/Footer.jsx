@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <footer className="flex flex-col items-center pb-20 mt-36 lg:pb-6">
-      <Div center full className="bg-gray-100 mb-10 py-16">
+      <Div center full className="bg-gray-100 mb-10 lg:py-16">
         <div className="flex flex-col w-full px-3 pt-20 pb-6 max-w-screen-maxxx text-sm md:px-6 lg:flex-row ">
           <div className="lg:w-[50%]">
             <h1 className="font-bold">Ikuti kami</h1>

@@ -12,6 +12,7 @@ import Div from "../helper/Div";
 import SideModal from "../modal/SideModal";
 import SearchModal from "../modal/childSideModal/SearchModal";
 import CartModal from "../modal/childSideModal/CartModal";
+import Link from "next/link";
 
 const navItem = [
   {
@@ -276,7 +277,9 @@ const Navbar = () => {
         <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx">
           {/* left */}
           <GiHamburgerMenu size={16} className="lg:hidden" />
-          <Image src={image} width={80} className="cursor-pointer" />
+          <Link href={"/"}>
+            <Image src={image} width={80} className="cursor-pointer" />
+          </Link>
 
           {/* center */}
           <div className="flex justify-center h-full max-lg:hidden">
@@ -309,7 +312,9 @@ const Navbar = () => {
           {/* right */}
           <div className="flex items-center gap-3">
             <div className="flex cursor-pointer max-lg:hidden">
-              <FaUser size={16} />
+              <Link href={"/login"}>
+                <FaUser size={16} />
+              </Link>
               <FaSortDown size={16} />
             </div>
 

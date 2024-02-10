@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
           <Navbar />
-          <main className="min-h-[100dvh] relative top-16">{children}</main>
+          <main className="min-h-[80dvh] md:min-h-[60vh] lg:min-h-[100dvh] relative top-16">{children}</main>
           <Footer />
           <NavbarBottom />
       </body>
