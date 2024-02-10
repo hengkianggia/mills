@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import google from '../../../assets/image-logo/google.webp'
+import Title from '@/components/title component/Title';
 
 const Login = ({title}) => {
   return (
@@ -21,14 +22,7 @@ const Login = ({title}) => {
     >
       <div className="w-full max-w-screen-maxxx px-4 pt-16 flex flex-col items-center gap-10 md:px-20 lg:max-w-[55vw]">
         {/* title */}
-        <Div flex column itemsCenter>
-          <h1 className="font-bold text-2xl capitalize">{title}</h1>
-          <Div flex itemsCenter className="gap-2 text-sm mt-1 capitalize">
-            <Link href={"/"}>Beranda</Link>
-            <FaAngleRight />
-            <p>{title}</p>
-          </Div>
-        </Div>
+<Title title={'Masuk'}/>
 
         {/* card */}
         <Div flex column itemsCenter full>

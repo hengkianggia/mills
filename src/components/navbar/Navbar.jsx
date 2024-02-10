@@ -261,7 +261,6 @@ const navItem = [
 
 const Navbar = () => {
   const [navItemActive, setNavItemActive] = useState("");
-  const [subNavItemActive, setSubNavItemActive] = useState("");
   const [showModal, setShowModal] = useState('');
 
   const navActive = (name) => {

@@ -6,7 +6,7 @@ import { MdVisibility } from "react-icons/md";
 const Input = ({ label, type = "text", placeholder, className }) => {
   return (
     <div className="flex flex-col gap-2 w-full">
-      {label && <p className="text-xs text-gray-300">{label}</p>}
+      {label && <p className="text-xs text-gray-300 lg:text-sm">{label}</p>}
       <div className="w-full min-h-8 flex items-center border-gray-me border-2 rounded-sm">
         <input
           type={type}
