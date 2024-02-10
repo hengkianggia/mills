@@ -58,9 +58,9 @@ const Footer = () => {
                   }
                 >
                   {openFooter === "customer-services" ? (
-                    <FaSortUp className="lg:hidden"/>
+                    <FaSortUp className="lg:hidden" />
                   ) : (
-                    <FaSortDown className="lg:hidden"/>
+                    <FaSortDown className="lg:hidden" />
                   )}
                 </div>
               </div>
@@ -68,8 +68,8 @@ const Footer = () => {
               {/* for mobile and tablet */}
               {openFooter == "customer-services" && (
                 <div className="mt-4 space-y-1 flex flex-col">
-                  <Link href={"/"}>About us</Link>
-                  <Link href={"/"}>How to order</Link>
+                  <Link href={"/article/about-us"}>About us</Link>
+                  <Link href={"/article/how-to-order"}>How to order</Link>
                   <Link href={"/"}>Shipping Methods</Link>
                   <Link href={"/"}>Payment Methods</Link>
                   <Link href={"/"}>FAQ</Link>
@@ -80,8 +80,8 @@ const Footer = () => {
 
               {/* for desktop */}
               <div className="mt-4 space-y-1 flex flex-col max-lg:hidden">
-                <Link href={"/"}>About us</Link>
-                <Link href={"/"}>How to order</Link>
+                <Link href={"/article/about-us"}>About us</Link>
+                <Link href={"/article/how-to-order"}>How to order</Link>
                 <Link href={"/"}>Shipping Methods</Link>
                 <Link href={"/"}>Payment Methods</Link>
                 <Link href={"/"}>FAQ</Link>

@@ -296,8 +296,6 @@ const Navbar = () => {
                       <div
                         key={index}
                         className="px-3 py-3 text-xs cursor-pointer min-w-[12vw] bg-gray-me transition-all hover:bg-gray-200"
-                        onMouseEnter={() => setSubNavItemActive(item.href)}
-                        onMouseLeave={() => setSubNavItemActive("")}
                       >
                         {item.name}
                       </div>
