@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import NavbarBottom from "@/components/navbar/NavbarBottom";
-import Head from "next/head";
+import Providers from "@/store/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +13,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
+// const cartModal = useSelector((state) => state.cartModal.cart);
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main className="min-h-[80dvh] md:min-h-[60vh] lg:min-h-[100dvh] relative top-16">
-          {children}
+        <main className="min-h-[80dvh] md:min-h-[60vh] lg:min-h-[80dvh] relative top-16">
+          <Providers>{children}</Providers>
         </main>
         <Footer />
         <NavbarBottom />

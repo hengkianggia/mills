@@ -70,9 +70,11 @@ const Footer = () => {
                 <div className="mt-4 space-y-1 flex flex-col">
                   <Link href={"/article/about-us"}>About us</Link>
                   <Link href={"/article/how-to-order"}>How to order</Link>
-                  <Link href={"/"}>Shipping Methods</Link>
-                  <Link href={"/"}>Payment Methods</Link>
-                  <Link href={"/"}>FAQ</Link>
+                  <Link href={"/article/shipping-methods"}>
+                    Shipping Methods
+                  </Link>
+                  <Link href={"/article/payment-methods"}>Payment Methods</Link>
+                  <Link href={"/article/faq"}>FAQ</Link>
                   <Link href={"/"}>Payment Confirmation</Link>
                   <Link href={"/"}>Contact Us</Link>
                 </div>
@@ -82,9 +84,9 @@ const Footer = () => {
               <div className="mt-4 space-y-1 flex flex-col max-lg:hidden">
                 <Link href={"/article/about-us"}>About us</Link>
                 <Link href={"/article/how-to-order"}>How to order</Link>
-                <Link href={"/"}>Shipping Methods</Link>
-                <Link href={"/"}>Payment Methods</Link>
-                <Link href={"/"}>FAQ</Link>
+                <Link href={"/article/shipping-methods"}>Shipping Methods</Link>
+                <Link href={"/article/payment-methods"}>Payment Methods</Link>
+                <Link href={"/article/faq"}>FAQ</Link>
                 <Link href={"/"}>Payment Confirmation</Link>
                 <Link href={"/"}>Contact Us</Link>
               </div>

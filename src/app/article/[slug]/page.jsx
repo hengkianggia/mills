@@ -1,6 +1,9 @@
 import Div from '@/components/helper/Div'
 import AboutUs from '@/components/pages/article/AboutUs'
+import Faq from '@/components/pages/article/Faq'
 import HowToOrder from '@/components/pages/article/HowToOrder'
+import PaymentMethods from '@/components/pages/article/PaymentMethods'
+import ShippingMethods from '@/components/pages/article/ShippingMethods'
 import Title from '@/components/title component/Title'
 import React from 'react'
 import { FaFacebook, FaLinkedin, FaTelegram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
@@ -24,6 +27,9 @@ let title = params.slug
           <div className="mt-14 w-full">
             {title == 'about-us' && <AboutUs/>}
             {title == 'how-to-order' && <HowToOrder/>}
+            {title == 'shipping-methods' && <ShippingMethods/>}
+            {title == 'payment-methods' && <PaymentMethods/>}
+            {title == 'faq' && <Faq/>}
             <ListSosmed />
           </div>
         </div>

@@ -273,8 +273,8 @@ const Navbar = () => {
 
   return (
     <>
-      <Div flex center fixed superTop full className={"bg-white w-full"}>
-        <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx">
+      <Div flex center fixed superTop full className={"bg-white w-full shadow-lg"}>
+        <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx lg:px-0">
           {/* left */}
           <GiHamburgerMenu
             size={16}

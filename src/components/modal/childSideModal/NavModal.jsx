@@ -44,16 +44,17 @@ const[activeNav, setActiveNav] =useState('')
                   <FaAngleDown />
                 )}
               </div>
+              
               {activeNav == item.href &&
               <div className='flex flex-col gap-3 my-3'>
-                  {item.children.map((item, index) => (
-                    <div
-                      key={index}
-                      className="px-3 text-sm uppercase"
-                    >
-                      {item.name}
-                    </div>
-                  ))}
+                {item.children.map((item, index) => (
+                  <div
+                    key={index}
+                    className="px-3 text-sm uppercase"
+                  >
+                    {item.name}
+                  </div>
+                ))}
               </div>}
             </div>
           ))}

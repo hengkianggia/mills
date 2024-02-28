@@ -23,7 +23,7 @@ const NavbarBottom = () => {
         </div>
       </Link>
 
-      <Link href={"/keranjang"}>
+      <Link href={"/cart"}>
         <div className="relative flex flex-col items-center gap-1">
           <FaShoppingBag size={18} />
           <p className="text-xs">Keranjang</p>
