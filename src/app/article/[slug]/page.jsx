@@ -14,14 +14,8 @@ let title = params.slug
 
   return (
     <>
-      <Div
-        flex
-        column
-        itemsCenter
-        full
-        className="bg-gradient-to-b from-yellow-50 to-white pt-14 px-4"
-      >
-        <div className="w-full flex flex-col items-center max-w-screen-maxxx min-h-[80vh] md:min-h-[50vh] lg:min-h-[90vh]">
+      <Div wrap className="bg-gradient-to-b from-yellow-50 to-white px-4">
+        <Div wrap className="w-full max-w-screen-maxxx min-h-[80vh] md:min-h-[50vh] lg:min-h-[50vh]">
           <Title title={title} />
 
           <div className="mt-14 w-full">
@@ -32,7 +26,7 @@ let title = params.slug
             {title == 'faq' && <Faq/>}
             <ListSosmed />
           </div>
-        </div>
+        </Div>
       </Div>
     </>
   );

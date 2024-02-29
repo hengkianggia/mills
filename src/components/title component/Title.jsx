@@ -13,7 +13,7 @@ const Title = ({title}) => {
 
     const newTitle = removeDash(title)
   return (
-    <Div flex column itemsCenter>
+    <Div flex column itemsCenter className='mt-14'>
       <h1 className="font-bold text-2xl uppercase lg:text-4xl">{newTitle}</h1>
       <Div flex itemsCenter className="gap-2 text-sm mt-1 capitalize">
         <Link href={"/"}>Beranda</Link>

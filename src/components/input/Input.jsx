@@ -10,10 +10,10 @@ const Input = ({ label, type = "text", placeholder, className }) => {
       <div className="w-full min-h-8 flex items-center border-gray-me border-2 rounded-sm">
         <input
           type={type}
-          className="w-full h-full px-3 text-xs py-4 "
+          className={`w-full h-full px-3 text-xs py-4 ${className}`}
           placeholder={placeholder}
         />
-        {type == "password" && <MdVisibility size={22} className='px-3'/>}
+        {type == "password" && <MdVisibility size={22} className="px-3" />}
       </div>
     </div>
   );

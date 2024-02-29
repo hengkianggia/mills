@@ -76,7 +76,7 @@ const Footer = () => {
                   <Link href={"/article/payment-methods"}>Payment Methods</Link>
                   <Link href={"/article/faq"}>FAQ</Link>
                   <Link href={"/"}>Payment Confirmation</Link>
-                  <Link href={"/"}>Contact Us</Link>
+                  <Link href={"/contact"}>Contact Us</Link>
                 </div>
               )}
 
@@ -88,7 +88,7 @@ const Footer = () => {
                 <Link href={"/article/payment-methods"}>Payment Methods</Link>
                 <Link href={"/article/faq"}>FAQ</Link>
                 <Link href={"/"}>Payment Confirmation</Link>
-                <Link href={"/"}>Contact Us</Link>
+                <Link href={"/contact"}>Contact Us</Link>
               </div>
             </div>
 

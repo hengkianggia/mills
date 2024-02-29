@@ -4,7 +4,7 @@ import Div from "@/components/helper/Div";
 
 const ShippingMethods = () => {
   return (
-    <Div full className="w-full flex flex-col items-center">
+    <Div wrap>
       <div className="md:max-w-[70%] lg:max-w-[50%]">
         <p className="text-xs">
           SHIPPING <br />
@@ -44,12 +44,13 @@ const ShippingMethods = () => {
             </a>
           </li>
           <li>
-            Jika barang sudah diserahkan kepada <strong>JNE EXPRESS</strong>, segala
-            bentuk keterlambatan atau barang hilang maka akan menjadi
+            Jika barang sudah diserahkan kepada <strong>JNE EXPRESS</strong>,
+            segala bentuk keterlambatan atau barang hilang maka akan menjadi
             tanggungjawab penuh ekspedisi. Namun, MILLS tetap akan membantu
-            kalian untuk follow up ke <strong>JNE EXPRESS</strong> hingga barangnya sampai
-            dan jika buruknya paket kalian hilang, kami akan membantu kalian
-            claim untuk mendapatkan full refund dari <strong>JNE EXPRESS</strong>.
+            kalian untuk follow up ke <strong>JNE EXPRESS</strong> hingga
+            barangnya sampai dan jika buruknya paket kalian hilang, kami akan
+            membantu kalian claim untuk mendapatkan full refund dari{" "}
+            <strong>JNE EXPRESS</strong>.
           </li>
           <li>
             Segala bentuk complain pengiriman seperti barang kurang, packaging

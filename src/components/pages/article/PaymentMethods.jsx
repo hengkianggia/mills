@@ -4,7 +4,7 @@ import Div from "@/components/helper/Div";
 
 const PaymentMethods = () => {
   return (
-    <Div full className="w-full flex flex-col items-center">
+    <Div wrap>
       <div className="md:max-w-[70%] lg:max-w-[50%]">
         <ul className="list-disc text-xs mt-6 pl-8 space-y-2">
           <li>

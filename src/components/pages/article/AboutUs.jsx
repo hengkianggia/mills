@@ -3,7 +3,7 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <Div full className="w-full flex flex-col items-center">
+    <Div wrap>
       <div className="md:max-w-[70%] lg:max-w-[50%]">
         <h1 className="uppercase text-3xl font-light">
           MILLS OFFICIAL APPAREL INDONESIA NATIONAL TEAM{" "}

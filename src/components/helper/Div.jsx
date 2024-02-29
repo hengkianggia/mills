@@ -19,6 +19,8 @@ const Div = memo(
         full,
         superTop,
         column,
+        wrap,
+        maxWidth,
       },
       ref
     ) => {
@@ -38,6 +40,8 @@ const Div = memo(
             fixed && "fixed",
             full && "w-full",
             superTop && "z-50",
+            wrap && "w-full flex flex-col items-center",
+            maxWidth && "max-w-screen-maxxx",
             className
           )}
         >

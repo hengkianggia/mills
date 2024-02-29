@@ -4,7 +4,7 @@ import Div from "@/components/helper/Div";
 
 const Faq = () => {
   return (
-    <Div full className="w-full flex flex-col items-center">
+    <Div wrap>
       <div className="md:max-w-[70%] lg:max-w-[50%]">
         <p className="text-xs">
           FAQ <br />
