@@ -112,11 +112,11 @@ const Footer = () => {
               {/* for mobile and tablet */}
               {openFooter == "information" && (
                 <div className={classNames("mt-4 space-y-1 flex flex-col")}>
-                  <Link href={"/"}>About MILLS</Link>
+                  <Link href={"/article/about-mills"}>About MILLS</Link>
                   <Link href={"/"}>Blog</Link>
-                  <Link href={"/"}>Privacy Policy</Link>
-                  <Link href={"/"}>Exchange & Return</Link>
-                  <Link href={"/"}>Terms and Conditions</Link>
+                  <Link href={"/article/privacy-policy"}>Privacy Policy</Link>
+                  <Link href={"/article/exchange-and-return"}>Exchange & Return</Link>
+                  <Link href={"/article/terms-and-conditions"}>Terms and Conditions</Link>
                 </div>
               )}
 
@@ -126,11 +126,11 @@ const Footer = () => {
                   "mt-4 space-y-1 flex flex-col max-lg:hidden"
                 )}
               >
-                <Link href={"/"}>About MILLS</Link>
+                <Link href={"/article/about-mills"}>About MILLS</Link>
                 <Link href={"/"}>Blog</Link>
-                <Link href={"/"}>Privacy Policy</Link>
-                <Link href={"/"}>Exchange & Return</Link>
-                <Link href={"/"}>Terms and Conditions</Link>
+                <Link href={"/article/privacy-policy"}>Privacy Policy</Link>
+                <Link href={"/article/exchange-and-return"}>Exchange & Return</Link>
+                <Link href={"/article/terms-and-conditions"}>Terms and Conditions</Link>
               </div>
             </div>
           </div>

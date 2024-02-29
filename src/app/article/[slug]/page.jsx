@@ -1,8 +1,10 @@
 import Div from '@/components/helper/Div'
 import AboutUs from '@/components/pages/article/AboutUs'
+import ExchangeAndReturn from '@/components/pages/article/ExhangeAndReturn'
 import Faq from '@/components/pages/article/Faq'
 import HowToOrder from '@/components/pages/article/HowToOrder'
 import PaymentMethods from '@/components/pages/article/PaymentMethods'
+import PrivacyPolicy from '@/components/pages/article/PrivacyPolicy'
 import ShippingMethods from '@/components/pages/article/ShippingMethods'
 import Title from '@/components/title component/Title'
 import React from 'react'
@@ -24,6 +26,9 @@ let title = params.slug
             {title == 'shipping-methods' && <ShippingMethods/>}
             {title == 'payment-methods' && <PaymentMethods/>}
             {title == 'faq' && <Faq/>}
+            {title == 'privacy-policy' && <PrivacyPolicy/>}
+            {title == 'exchange-and-return' && <ExchangeAndReturn/>}
+            {title == 'terms-and-conditions' && <ExchangeAndReturn/>}
             <ListSosmed />
           </div>
         </Div>
