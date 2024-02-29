@@ -6,6 +6,7 @@ import Div from '@/components/helper/Div'
 import { IoClose } from 'react-icons/io5'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 const NavModal = ({ onClose, data }) => {
 const[activeNav, setActiveNav] =useState('')
@@ -26,36 +27,32 @@ const[activeNav, setActiveNav] =useState('')
         <div className="w-full">
           {data.map((item, index) => (
             <div key={index} className="flex flex-col relative ">
-              <div
-                className="w-full flex justify-between items-center"
-                onClick={() => navActive(item.href)}
-              >
+              <div className="w-full flex justify-between items-center">
                 <p
                   className={classNames(
                     "uppercase text-sm py-2",
                     activeNav == item.href && "text-yellow-me font-semibold"
                   )}
+                  onClick={onClose}
                 >
-                  {item.name}
+                  <Link href={"/product"}>{item.name}</Link>
                 </p>
                 {activeNav == item.href ? (
                   <FaAngleUp className="text-yellow-me" />
                 ) : (
-                  <FaAngleDown />
+                  <FaAngleDown onClick={() => navActive(item.href)} />
                 )}
               </div>
-              
-              {activeNav == item.href &&
-              <div className='flex flex-col gap-3 my-3'>
-                {item.children.map((item, index) => (
-                  <div
-                    key={index}
-                    className="px-3 text-sm uppercase"
-                  >
-                    {item.name}
-                  </div>
-                ))}
-              </div>}
+
+              {activeNav == item.href && (
+                <div className="flex flex-col gap-3 my-3">
+                  {item.children.map((item, index) => (
+                    <div key={index} className="px-3 text-sm uppercase" onClick={onClose}>
+                      <Link href={"/product"}>{item.name}</Link>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

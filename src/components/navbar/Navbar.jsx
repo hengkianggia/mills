@@ -273,7 +273,14 @@ const Navbar = () => {
 
   return (
     <>
-      <Div flex center fixed superTop full className={"bg-white w-full shadow-lg"}>
+      <Div
+        flex
+        center
+        fixed
+        superTop
+        full
+        className={"bg-white w-full shadow-lg"}
+      >
         <nav className="w-full bg-white h-[65px] flex justify-between items-center px-4 max-w-screen-maxxx lg:px-0">
           {/* left */}
           <GiHamburgerMenu
@@ -282,7 +289,12 @@ const Navbar = () => {
             onClick={() => setShowModal("navbar")}
           />
           <Link href={"/"}>
-            <Image src={image} width={80} className="cursor-pointer" alt="popo"/>
+            <Image
+              src={image}
+              width={80}
+              className="cursor-pointer"
+              alt="popo"
+            />
           </Link>
 
           {/* center */}
@@ -294,7 +306,9 @@ const Navbar = () => {
                 onMouseEnter={navActive.bind(this, item.href)}
                 onMouseLeave={navActive.bind(this, "")}
               >
-                <p>{item.name}</p>
+                <Link href={"/product"}>
+                  <p>{item.name}</p>
+                </Link>
                 {navItemActive === item.href && (
                   <div className="absolute left-0 uppercase top-16">
                     {navItem[index].children.map((item, index) => (
@@ -302,7 +316,9 @@ const Navbar = () => {
                         key={index}
                         className="px-3 py-3 text-xs cursor-pointer min-w-[12vw] bg-gray-me transition-all hover:bg-gray-200"
                       >
-                        {item.name}
+                        <Link href={"/product"}>
+                          <p>{item.name}</p>
+                        </Link>
                       </div>
                     ))}
                   </div>

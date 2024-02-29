@@ -21,6 +21,7 @@ const Div = memo(
         column,
         wrap,
         maxWidth,
+        pointer,
       },
       ref
     ) => {
@@ -42,6 +43,7 @@ const Div = memo(
             superTop && "z-50",
             wrap && "w-full flex flex-col items-center",
             maxWidth && "max-w-screen-maxxx",
+            pointer && "cursor-pointer",
             className
           )}
         >
