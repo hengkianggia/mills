@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import NavbarBottom from "@/components/navbar/NavbarBottom";
 import Providers from "@/store/Providers";
+import NextTopLoader from "nextjs-toploader";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,17 +16,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   
-// const cartModal = useSelector((state) => state.cartModal.cart);
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-[80dvh] md:min-h-[60vh] lg:min-h-[80dvh] relative top-16">
-          <Providers>{children}</Providers>
-        </main>
-        <Footer />
-        <NavbarBottom />
+      <NextTopLoader/>
+        <Providers>
+          <Navbar />
+          <main className="min-h-[80dvh] md:min-h-[60vh] lg:min-h-[80dvh] relative top-16">
+            {children}
+          </main>
+          <Footer />
+          <NavbarBottom />
+        </Providers>
       </body>
     </html>
   );

@@ -4,17 +4,28 @@ import Button from '@/components/button/Button'
 import Div from '@/components/helper/Div'
 import Emptycart from '@/components/pages/cart/Emptycart'
 import Title from '@/components/title component/Title'
-import React, { useState } from 'react'
+import { cartIsActive, cartIsNonActive } from '@/store/cartModalShowing'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useBeforeUnload } from 'react-use'
 import { RiCoupon3Fill } from "react-icons/ri";
 
 const Cart = () => {
-const [cart , setCart]=useState(null)
+    const [cart, setCart] = useState(null);
+
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+      dispatch(cartIsActive());
+    }, []);
+
+    useBeforeUnload(() => {dispatch(cartIsNonActive())}, "You have unsaved changes, are you sure?");
 
   return (
-    <Div flex column full itemsCenter className="pt-14">
+    <Div wrap>
       <Title title={"keranjang belanja"} />
 
-      <div className="w-full max-w-screen-maxxx flex flex-col mt-10 gap-6 px-4">
+      <Div wrap maxWidth className="mt-10 gap-6 px-4">
         {/* left/top */}
         <div className="w-full min-h-96">{cart == null && <Emptycart />}</div>
 
@@ -31,9 +42,8 @@ const [cart , setCart]=useState(null)
             </Button>
           </div>
         </div>
-      </div>
+      </Div>
     </Div>
-  );
-}
+  );}
 
-export default Cart
+export default Cart;

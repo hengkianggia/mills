@@ -21,7 +21,7 @@ let title = params.slug
           <Title title={title} />
 
           <div className="mt-14 w-full">
-            {title == 'about-us' && <AboutUs/>}
+            {title == 'about-us' || 'about-mills' && <AboutUs/>}
             {title == 'how-to-order' && <HowToOrder/>}
             {title == 'shipping-methods' && <ShippingMethods/>}
             {title == 'payment-methods' && <PaymentMethods/>}

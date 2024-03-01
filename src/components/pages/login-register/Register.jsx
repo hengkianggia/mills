@@ -12,18 +12,15 @@ import Title from "@/components/title component/Title";
 const Register = () => {
   return (
     <Div
-      full
-      flex
-      column
-      itemsCenter
+      wrap
       className="bg-gradient-to-b from-yellow-50 to-white"
     >
-      <div className="w-full max-w-screen-maxxx px-4 pt-16 flex flex-col items-center gap-10 md:px-20 lg:max-w-[55vw]">
+      <div className="w-full max-w-screen-maxxx px-4 flex flex-col items-center gap-10 md:px-20 lg:max-w-[55vw]">
         {/* title */}
         <Title title={'Daftar'}/>
 
         {/* card */}
-        <Div flex column itemsCenter full>
+        <Div wrap>
           <Card className={"items-start max-w-screen-maxxx w-full"}>
             <h1 className="font-bold text-sm mb-1">Akun Baru</h1>
             <p className="text-sm text-gray-500">

@@ -32,6 +32,11 @@ const ListProduct = () => {
             <ItemProduct/>
             <ItemProduct/>
             <ItemProduct/>
+            <ItemProduct/>
+            <ItemProduct/>
+            <ItemProduct/>
+            <ItemProduct/>
+            <ItemProduct/>
           </Div>
         </Div>
       </Div>

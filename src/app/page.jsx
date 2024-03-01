@@ -136,7 +136,7 @@ const ItemMenu = ({ className, gamabr,text }) => {
       className={`w-full h-20 grid place-items-center uppercase relative cursor-pointer md:h-44 ${className}`}
     >
       <Link
-        href={"/"}
+        href={"/product"}
         className="flex items-center justify-center w-full h-full"
       >
         <Image
