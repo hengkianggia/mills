@@ -18,7 +18,7 @@ const buttonClick = () => {
     <>
       <Div between className="border border-b-2 border-gray-me pb-6">
         <h1 className="font-semibold">Keranjang Belanja</h1>
-        <IoClose size={20} onClick={onClose} />
+        <IoClose size={20} onClick={onClose} className='cursor-pointer'/>
       </Div>
 
       {/* empty cart */}

@@ -5,7 +5,7 @@ import { motion as m } from "framer-motion";
 const SideModal = ({ left, right, show, onClose, children }) => {
   const variants = {
     open: { x: 0 },
-    closed: { x: "100%" },
+    closed: { x: right ? "100%" : '-100%' },
   };
 
   const variantsModal = {
