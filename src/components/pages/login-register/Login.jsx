@@ -1,9 +1,8 @@
 import React from 'react'
 
 import Div from '../../../components/helper/Div'
-import { FaAngleRight } from 'react-icons/fa';
 import Card from '@/components/card/Card';
-import Input from '@/components/input/input';
+import Input from '@/components/input/Input';
 import Button from '@/components/button/Button';
 import Link from 'next/link';
 import Image from 'next/image';

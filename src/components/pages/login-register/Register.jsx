@@ -2,7 +2,7 @@ import React from "react";
 
 import Div from "../../../components/helper/Div";
 import Card from "@/components/card/Card";
-import Input from "@/components/input/input";
+import Input from "@/components/input/Input";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 
