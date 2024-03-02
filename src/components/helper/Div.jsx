@@ -5,6 +5,7 @@ const Div = memo(
   forwardRef(
     (
       {
+        onClick,
         children,
         flex,
         between,
@@ -22,12 +23,14 @@ const Div = memo(
         wrap,
         maxWidth,
         pointer,
+        gap,
       },
       ref
     ) => {
       return (
         <div
           ref={ref}
+          onClick={onClick}
           className={classNames(
             flex && "flex",
             center && "flex justify-center items-center",
@@ -44,6 +47,7 @@ const Div = memo(
             wrap && "w-full flex flex-col items-center",
             maxWidth && "max-w-screen-maxxx",
             pointer && "cursor-pointer",
+            gap && `gap-${gap}`,
             className
           )}
         >
