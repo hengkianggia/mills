@@ -9,6 +9,7 @@ import { IoFilter } from 'react-icons/io5'
 import { products } from '@/data/ProductData'
 import SideModal from '@/components/modal/SideModal'
 import FilterListProductModal from '@/components/modal/childSideModal/FilterListProductModal'
+import SortItemModal from "@/components/modal/childSideModal/SortItemModal";
 
 const ListProduct = () => {
   const [modal, setModal] = useState(null)
@@ -21,11 +22,23 @@ const ListProduct = () => {
           <Div wrap className="mt-14 px-4">
             {/* filter section */}
             <Div flex itemsCenter full className="justify-end gap-4">
-              <Div flex itemsCenter pointer className="gap-2" onClick={() => setModal("saring")}>
+              <Div
+                flex
+                itemsCenter
+                pointer
+                className="gap-2"
+                onClick={() => setModal("saring")}
+              >
                 <p>Saring</p>
                 <IoFilter />
               </Div>
-              <Div flex itemsCenter pointer className="gap-2" onClick={() => setModal("urutkan")}>
+              <Div
+                flex
+                itemsCenter
+                pointer
+                className="gap-2"
+                onClick={() => setModal("urutkan")}
+              >
                 <p>Urutkan</p>
                 <FaChevronDown />
               </Div>
@@ -47,8 +60,14 @@ const ListProduct = () => {
         </Div>
       </Div>
 
-      <SideModal right show={modal == 'saring'} onClose={() => setModal(null)}>
-        <FilterListProductModal/>
+      {/* saring modal */}
+      <SideModal right show={modal == "saring"} onClose={() => setModal(null)}>
+        <FilterListProductModal />
+      </SideModal>
+
+      {/* urutkan modal */}
+      <SideModal right show={modal == "urutkan"} onClose={() => setModal(null)}>
+        <SortItemModal onClose={() => setModal(null)} />
       </SideModal>
     </>
   );

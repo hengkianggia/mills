@@ -7,7 +7,6 @@ import Title from '@/components/title component/Title'
 import { cartIsActive, cartIsNonActive } from '@/store/cartModalShowing'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useBeforeUnload } from 'react-use'
 import { RiCoupon3Fill } from "react-icons/ri";
 
 const Cart = () => {
@@ -18,8 +17,6 @@ const Cart = () => {
     useEffect(() => {
       dispatch(cartIsActive());
     }, []);
-
-    useBeforeUnload(() => {dispatch(cartIsNonActive())}, "You have unsaved changes, are you sure?");
 
   return (
     <Div wrap>

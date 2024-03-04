@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ['sf-0.sirclocdn.com'],
+  },
+};
 
 export default nextConfig;

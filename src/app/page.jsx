@@ -74,10 +74,10 @@ export default function Home() {
           <h1 className="text-xl">· NEW PRODUCT ·</h1>
 
           <div className="grid grid-cols-2 gap-3 gap-y-5 mt-8 w-full md:grid-cols-4 md:gap-5">
-            <ItemProduct />
-            <ItemProduct />
-            <ItemProduct />
-            <ItemProduct />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
           </div>
 
           <Button
@@ -105,16 +105,17 @@ export default function Home() {
           ))}
         </div>
       </Div>
+      
       {/* brands */}
       <Div center full className="mt-8">
         <div className="flex flex-col items-center mt-10 px-4 max-w-screen-maxxx">
           <h1 className="text-xl">· BRANDS ·</h1>
 
           <div className="grid grid-cols-2 gap-3 gap-y-5 mt-8 w-full md:grid-cols-4 md:gap-5">
-            <ItemProduct />
-            <ItemProduct />
-            <ItemProduct />
-            <ItemProduct />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
           </div>
 
           <Button
