@@ -44,7 +44,7 @@ let title = params.slug
 
 export default ArticleDetail
 
-const ListSosmed = () => {
+export const ListSosmed = () => {
   return (
     <div className="w-full flex flex-col gap-2 mt-10">
       <h1 className="font-bold text-sm">Bagikan</h1>

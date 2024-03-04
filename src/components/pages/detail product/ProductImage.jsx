@@ -19,7 +19,7 @@ const [activeImage, setActiveImage] = useState(dataImage[0]);
 
   return (
     <Div wrap>
-      <Div wrap gap="5" className="h-96">
+      <Div wrap gap="5" className="">
         <Image
           src={activeImage}
           alt="product"
@@ -34,7 +34,7 @@ const [activeImage, setActiveImage] = useState(dataImage[0]);
         flex
         gap="3"
         itemsCenter
-        className="w-[80%] mt-4 bg-gray-50 snap-x snap-mandatory overflow-x-scroll no-scrollbar"
+        className="w-[80%] bg-gray-50 snap-x snap-mandatory overflow-x-scroll no-scrollbar"
       >
         {dataImage.map((item, index) => (
           <Image
@@ -45,7 +45,7 @@ const [activeImage, setActiveImage] = useState(dataImage[0]);
             alt="product"
             width={300}
             height={300}
-            className="w-20"
+            className="w-16 cursor-pointer opacity-60 hover:opacity-100"
           />
         ))}
       </Div>
