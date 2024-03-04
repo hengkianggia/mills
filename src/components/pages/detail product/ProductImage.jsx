@@ -24,7 +24,8 @@ const [activeImage, setActiveImage] = useState(dataImage[0]);
           src={activeImage}
           alt="product"
           width={900}
-          height={900}
+          height={900} 
+          priority
           className="w-full"
         />
       </Div>
@@ -40,6 +41,7 @@ const [activeImage, setActiveImage] = useState(dataImage[0]);
             onClick={() => setActiveImage(item)}
             key={index}
             src={item}
+            priority
             alt="product"
             width={300}
             height={300}
