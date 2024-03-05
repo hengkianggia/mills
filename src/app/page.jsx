@@ -28,7 +28,17 @@ const showcase = [
 ]
 
 
-const slider = [1,2,3,4,5,6,7,8,9,10];
+const slider = [
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/163c63fb-037c-4ffb-aabe-b9efc02704e2-XYCLOPS-SPEEDFREAK-WEB.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/3742331a-9e61-4dd4-b625-f434b13c8e14-BATMAN-SPORT-APPAREL-2---WEB.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/6b15a20b-d322-4401-a235-3cc06c6ff90b-BANNER-ENERMAX-DYNAPLATE-WEB.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/d99957ee-cf87-4755-a33e-d038fddd19a7-BANNER-WEB-MEMBER.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/0b9eeca4-5534-4066-881d-802c5fffd330-BANNER-RUNNING-WEB-4.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/3baa835e-dd44-4c6b-8dc8-7530a3ee59c1-BANNER-PANTHERA%20WEB.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/c39d1453-7491-41b6-b9eb-061d0b212e5f-KALDERA%20WEB.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/410425ab-0260-4922-9a2b-63de3c84f291-Web%20TIMNAS%20JERSEY-100.jpg",
+  "https://thumbor.sirclocdn.com/unsafe/720x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/7264d1bd-7878-44fc-b93d-822f7db177f5-BANNER-NERGETIC-WEB.jpg",
+];
 
 export default function Home() {
   return (
@@ -47,8 +57,9 @@ export default function Home() {
       >
         {slider.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-64 md:h-[42vh] lg:h-[92vh] bg-red-100 grid place-items-center text-3xl">
-              <h1>{item}</h1>
+            <div className="w-full bg-red-100 grid place-items-center text-3xl">
+              {/* <h1>{item}</h1> */}
+              <Image src={item} width={2000} height={1000} className="w-full object-cover"/>
             </div>
           </SwiperSlide>
         ))}

@@ -9,7 +9,7 @@ const SelectOption = ({label, dataOption}) => {
       </label>
       <select
         id="select"
-        className="w-full p-3 border border-gray-300"
+        className="w-full p-3 border border-gray-300 cursor-pointer"
         defaultValue={"masuk"}
       >
         {dataOption.map((item, index) => (

@@ -49,6 +49,7 @@ const ListProduct = () => {
               {products.map((item) => {
                 return (
                   <ItemProduct
+                  id={item.id}
                     key={item.id}
                     name={item.name}
                     price={item.price}

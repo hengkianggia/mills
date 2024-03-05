@@ -37,7 +37,7 @@ const [addCount, setAddCount] = useState(1)
         <Div full between className="p-3 border border-r-gray-50">
           <div
             className={classNames(
-              "w-5 text-lg grid place-items-center",
+              "w-5 text-lg grid place-items-center cursor-pointer",
               addCount == 1 ? "opacity-0" : "opacity-100"
             )}
             onClick={() =>
@@ -50,13 +50,14 @@ const [addCount, setAddCount] = useState(1)
           </div>
           <p>{addCount}</p>
           <div
-            className="w-5 text-lg grid place-items-center"
+            className="w-5 text-lg grid place-items-center cursor-pointer"
             onClick={() => setAddCount((prevState) => prevState + 1)}
           >
             +
           </div>
         </Div>
       </Div>
+
       <Button className={"bg-yellow-me text-white w-full mt-6"}>
         Masukkan Keranjang
       </Button>
