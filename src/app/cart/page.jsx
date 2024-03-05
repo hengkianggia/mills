@@ -9,9 +9,10 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { RiCoupon3Fill } from "react-icons/ri";
 import getWindowDimension from '@/utilis/getWindowDimension'
+import ItemOnCart from '@/components/pages/cart/ItemOnCart'
 
 const Cart = () => {
-    const [cart, setCart] = useState(null);
+    const [cart, setCart] = useState(1);
 
     const dispatch = useDispatch();
     
@@ -25,12 +26,18 @@ const Cart = () => {
     <Div wrap>
       <Title title={"keranjang belanja"} />
 
-      <Div wrap maxWidth className="mt-10 gap-6 px-4 lg:flex-row lg:px-16">
+      <Div
+        wrap
+        maxWidth
+        className="mt-10 gap-6 px-4 md:px-6 md:mt-16 lg:flex-row lg:justify-between lg:gap-0 lg:px-0 lg:items-start"
+      >
         {/* left/top */}
-        <div className="w-full min-h-96">{cart == null && <Emptycart />}</div>
+        <Div full className="w-full lg:w-[65%]">
+          {cart == null ? <Emptycart /> : <ItemOnCart />}
+        </Div>
 
         {/* right/bottom */}
-        <Div full>
+        <Div full className='lg:w-[33%]'>
           {/* kupomn code */}
           <Div
             flex

@@ -44,14 +44,16 @@ const CartModal = ({onClose}) => {
         <Button className={"w-full bg-yellow-me text-white border text-sm"}>
           Beli
         </Button>
-        <Button
-          className={
-            "w-full bg-white text-yellow-me border border-yellow-me text-sm transition-all hover:bg-yellow-me hover:text-white"
-          }
-          onClick={onClose}
-        >
-          <Link href={"/cart"}>Liat keranjang</Link>
-        </Button>
+        <Link href={"/cart"}>
+          <Button
+            className={
+              "w-full bg-white text-yellow-me border border-yellow-me text-sm transition-all hover:bg-yellow-me hover:text-white"
+            }
+            onClick={onClose}
+          >
+            Liat keranjang
+          </Button>
+        </Link>
       </Div>
     </>
   );

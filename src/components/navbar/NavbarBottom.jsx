@@ -16,7 +16,7 @@ const NavbarBottom = () => {
   const cartModal = useSelector((state) => state.cartModal.cart);
   const kondisi = cartModal == false;
 
-  const {isMobileDimension}=getWindowDimension()
+  const {isMobileDimension,isTabletDimension}=getWindowDimension()
 
   const normalNav = (
     <div className="fixed w-full h-[60px] flex justify-around pt-3 bg-white bottom-0 left-0 right-0 lg:hidden z-40">
@@ -61,45 +61,53 @@ const NavbarBottom = () => {
       full
       fixed
       gap="3"
-      className="px-4 py-3 bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] bottom-0 left-0 right-0 lg:hidden z-40"
+      className="px-4 py-3 bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9)] bottom-0 left-0 right-0 md:p-6 lg:hidden z-40"
     >
       {subtotalProduk && (
-        <Div full between className="py-3 text-xs">
+        <Div full between className="py-3 text-xs pb-5 mb-3 border-b border-gray-300 md:text-lg">
           <p>Subtotal (Produk)</p>
           <p>IDR 0</p>
         </Div>
       )}
 
       <Div full between>
-        <Div flex column className="text-xs">
+        <Div flex column className="text-xs md:text-lg">
           <p>Total Pembayaran</p>
           <p className="font-semibold">IDR 0</p>
         </Div>
-        <Div className="p-1 border-2 border-yellow-me grid place-items-center">
-          {subtotalProduk ? (
-            <FaChevronDown
-              className="text-yellow-me"
-              size={14}
-              onClick={() => setSubtotalProduk(false)}
-            />
-          ) : (
-            <FaChevronUp
-              className="text-yellow-me"
-              size={14}
-              onClick={() => setSubtotalProduk(true)}
-            />
-          )}
-        </Div>
+        <Div flex itemsCenter gap='3'>
+          <Div className="p-2 h-[80%] border-2 border-yellow-me grid place-items-center">
+            {subtotalProduk ? (
+              <FaChevronDown
+                className="text-yellow-me"
+                size={14}
+                onClick={() => setSubtotalProduk(false)}
+              />
+            ) : (
+              <FaChevronUp
+                className="text-yellow-me"
+                size={14}
+                onClick={() => setSubtotalProduk(true)}
+              />
+            )}
+          </Div>
 
-        <Button
-          children={"Beli"}
-          className={"bg-yellow-me text-white w-[35vw] rounded-md"}
-        />
+          <Button
+            children={"Beli"}
+            className={"bg-yellow-me text-white w-[35vw] rounded-md"}
+          />
+        </Div>
       </Div>
     </Div>
   );
 
-  return <>{kondisi ? normalNav : kondisi == false && isMobileDimension ? cartNav : ''}</>;
+  return (
+    <>
+      {kondisi
+        ? normalNav
+        : kondisi == false && (isMobileDimension | isTabletDimension) ? cartNav : ""}
+    </>
+  );
 };
 
 export default NavbarBottom;

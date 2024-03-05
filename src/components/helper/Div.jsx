@@ -32,6 +32,7 @@ const Div = memo(
           ref={ref}
           onClick={onClick}
           className={classNames(
+            className,
             flex && "flex",
             center && "flex justify-center items-center",
             column && "flex-col",
@@ -48,7 +49,6 @@ const Div = memo(
             maxWidth && "max-w-screen-maxxx",
             pointer && "cursor-pointer",
             gap && `gap-${gap}`,
-            className
           )}
         >
           {children}
