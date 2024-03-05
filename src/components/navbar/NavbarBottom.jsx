@@ -64,14 +64,14 @@ const NavbarBottom = () => {
       className="px-4 py-3 bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] bottom-0 left-0 right-0 lg:hidden z-40"
     >
       {subtotalProduk && (
-        <Div full between className="py-3 ">
+        <Div full between className="py-3 text-xs">
           <p>Subtotal (Produk)</p>
           <p>IDR 0</p>
         </Div>
       )}
 
       <Div full between>
-        <Div flex column className="text-sm">
+        <Div flex column className="text-xs">
           <p>Total Pembayaran</p>
           <p className="font-semibold">IDR 0</p>
         </Div>
