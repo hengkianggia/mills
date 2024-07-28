@@ -1,5 +1,5 @@
-"use client"
-import React, {useState} from "react";
+"use client";
+import React, { useState } from "react";
 
 import { AiFillHome } from "react-icons/ai";
 import { IoGrid } from "react-icons/io5";
@@ -7,16 +7,16 @@ import { FaChevronDown, FaChevronUp, FaShoppingBag } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import getWindowDimension from "@/utilis/getWindowDimension";
+import getWindowDimension from "@/utils/getWindowDimension";
 import Div from "../helper/Div";
 import Button from "../button/Button";
 
 const NavbarBottom = () => {
-  const [subtotalProduk, setSubtotalProduk] = useState(true)
+  const [subtotalProduk, setSubtotalProduk] = useState(true);
   const cartModal = useSelector((state) => state.cartModal.cart);
   const kondisi = cartModal == false;
 
-  const {isMobileDimension,isTabletDimension}=getWindowDimension()
+  const { isMobileDimension, isTabletDimension } = getWindowDimension();
 
   const normalNav = (
     <div className="fixed w-full h-[60px] flex justify-around pt-3 bg-white bottom-0 left-0 right-0 lg:hidden z-40">
@@ -64,7 +64,11 @@ const NavbarBottom = () => {
       className="px-4 py-3 bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9)] bottom-0 left-0 right-0 md:p-6 lg:hidden z-40"
     >
       {subtotalProduk && (
-        <Div full between className="py-3 text-xs pb-5 mb-3 border-b border-gray-300 md:text-lg">
+        <Div
+          full
+          between
+          className="py-3 text-xs pb-5 mb-3 border-b border-gray-300 md:text-lg"
+        >
           <p>Subtotal (Produk)</p>
           <p>IDR 0</p>
         </Div>
@@ -75,7 +79,7 @@ const NavbarBottom = () => {
           <p>Total Pembayaran</p>
           <p className="font-semibold">IDR 0</p>
         </Div>
-        <Div flex itemsCenter gap='3'>
+        <Div flex itemsCenter gap="3">
           <Div className="p-2 h-[80%] border-2 border-yellow-me grid place-items-center">
             {subtotalProduk ? (
               <FaChevronDown
@@ -105,7 +109,9 @@ const NavbarBottom = () => {
     <>
       {kondisi
         ? normalNav
-        : kondisi == false && (isMobileDimension | isTabletDimension) ? cartNav : ""}
+        : kondisi == false && isMobileDimension | isTabletDimension
+        ? cartNav
+        : ""}
     </>
   );
 };

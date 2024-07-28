@@ -1,55 +1,53 @@
-const min = 1;
-const max = 1000;
 const products = [
   {
-    id: Math.floor(Math.floor(Math.random() * (max - min + 1)) + min * (max - min + 1)) + min,
+    id: 1,
+    name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
+    price: '199.900',
+  },
+  {
+    id: 2,
+    name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
+    price: '299.900',
+  },
+  {
+    id: 3,
+    name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
+    price: '399.900',
+  },
+  {
+    id: 4,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
     price: '499.900',
   },
   {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
+    id: 5,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
+    price: '599.900',
   },
   {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
+    id: 6,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
+    price: '699.900',
   },
   {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
+    id: 7,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
+    price: '799.900',
   },
   {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
+    id: 8,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
+    price: '899.900',
   },
   {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
+    id: 9,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
+    price: '999.900',
   },
   {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
+    id: 10,
     name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
-  },
-  {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
-    name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
-  },
-  {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
-    name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
-  },
-  {
-    id: Math.floor(Math.random() * (max - min + 1)) + min,
-    name: "MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206",
-    price: '499.900',
+    price: '1.099.900',
   },
 ];
 

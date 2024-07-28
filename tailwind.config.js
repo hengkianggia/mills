@@ -16,6 +16,9 @@ module.exports = {
         maxxx: "1200px",
         // max width
       },
+      fontFamily: {
+        Assistant: ["Assistant", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -14,6 +14,7 @@ import SearchModal from "../modal/childSideModal/SearchModal";
 import CartModal from "../modal/childSideModal/CartModal";
 import Link from "next/link";
 import NavModal from "../modal/childSideModal/NavModal";
+import User from "./User";
 
 const navItem = [
   {
@@ -262,14 +263,14 @@ const navItem = [
 
 const Navbar = () => {
   const [navItemActive, setNavItemActive] = useState("");
-  const [showModal, setShowModal] = useState('');
+  const [showModal, setShowModal] = useState("");
 
   const navActive = (name) => {
     if (navItemActive === name) {
-      setNavItemActive('');
+      setNavItemActive("");
     }
-    setNavItemActive(name)
-  }
+    setNavItemActive(name);
+  };
 
   return (
     <>
@@ -330,10 +331,7 @@ const Navbar = () => {
           {/* right */}
           <div className="flex items-center gap-3">
             <div className="flex cursor-pointer max-lg:hidden">
-              <Link href={"/login"}>
-                <FaUser size={16} />
-              </Link>
-              <FaSortDown size={16} />
+              <User />
             </div>
 
             <div className="relative cursor-pointer max-lg:hidden">

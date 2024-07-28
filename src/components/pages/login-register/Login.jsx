@@ -1,24 +1,22 @@
-import React from 'react'
+import React from "react";
 
-import Div from '../../../components/helper/Div'
-import Card from '@/components/card/Card';
-import Input from '@/components/input/Input';
-import Button from '@/components/button/Button';
-import Link from 'next/link';
-import Image from 'next/image';
+import Div from "../../../components/helper/Div";
+import Card from "@/components/card/Card";
+import Input from "@/components/input/Input";
+import Button from "@/components/button/Button";
+import Link from "next/link";
+import Image from "next/image";
 
-import google from '../../../assets/image-logo/google.webp'
-import Title from '@/components/title component/Title';
+import google from "../../../assets/image-logo/google.webp";
+import Title from "@/components/title component/Title";
+import { login } from "@/lib/action";
 
-const Login = ({title}) => {
+const Login = ({ title }) => {
   return (
-    <Div
-      wrap
-      className="bg-gradient-to-b from-yellow-50 to-white"
-    >
+    <Div wrap className="bg-gradient-to-b from-yellow-50 to-white">
       <div className="w-full max-w-screen-maxxx px-4 flex flex-col items-center gap-10 md:px-20 lg:max-w-[55vw]">
         {/* title */}
-        <Title title={'Masuk'}/>
+        <Title title={"Masuk"} />
 
         {/* card */}
         <Div wrap>
@@ -29,15 +27,17 @@ const Login = ({title}) => {
             </p>
 
             {/* form */}
-            <div className={"w-full flex flex-col gap-6 mt-6"}>
+            <form action={login} className={"w-full flex flex-col gap-6 mt-6"}>
               <Input
                 label={"Alamat Email"}
                 type={"email"}
+                name={"email"}
                 placeholder={"Masukkan Email Anda"}
               />
               <Input
                 label={"Kata Sandi"}
                 type={"password"}
+                name={"password"}
                 placeholder={"Masukkan Kata Sandi Anda"}
               />
 
@@ -46,7 +46,7 @@ const Login = ({title}) => {
               >
                 Masuk
               </Button>
-            </div>
+            </form>
 
             {/* bawah */}
             <div className="w-full flex flex-col items-center text-xs gap-4 mt-8">
@@ -78,7 +78,7 @@ const Login = ({title}) => {
                   src={google}
                   width={200}
                   height={200}
-                  alt='popo'
+                  alt="popo"
                   className="w-8 object-cover"
                 />
                 <p className="col-span-2">Login dengan Google</p>
@@ -89,6 +89,6 @@ const Login = ({title}) => {
       </div>
     </Div>
   );
-}
+};
 
-export default Login
+export default Login;

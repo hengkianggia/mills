@@ -1,26 +1,31 @@
-"use client"
+"use client";
 
-import Button from '@/components/button/Button'
-import Div from '@/components/helper/Div'
-import Emptycart from '@/components/pages/cart/Emptycart'
-import Title from '@/components/title component/Title'
-import { cartIsActive, cartIsNonActive } from '@/store/cartModalShowing'
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from "react";
+
+import Button from "@/components/button/Button";
+import Div from "@/components/helper/Div";
+import Emptycart from "@/components/pages/cart/Emptycart";
+import Title from "@/components/title component/Title";
+import { cartIsActive, cartIsNonActive } from "@/store/cartModalShowing";
+import { useDispatch } from "react-redux";
 import { RiCoupon3Fill } from "react-icons/ri";
-import getWindowDimension from '@/utilis/getWindowDimension'
-import ItemOnCart from '@/components/pages/cart/ItemOnCart'
+import getWindowDimension from "@/utils/getWindowDimension";
+import ItemOnCart from "@/components/pages/cart/ItemOnCart";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
-    const [cart, setCart] = useState(1);
+  const [cart, setCart] = useState([]);
 
-    const dispatch = useDispatch();
-    
-    useEffect(() => {
-      dispatch(cartIsActive());
-    }, []);
+  const dispatch = useDispatch();
 
-    const { isMobileDimension}=getWindowDimension()
+  useEffect(() => {
+    dispatch(cartIsActive());
+  }, []);
+
+  const { isMobileDimension } = getWindowDimension();
+
+  const productInCart = useSelector((state) => state.cart.items);
+  // console.log(productInCart);
 
   return (
     <Div wrap>
@@ -33,11 +38,15 @@ const Cart = () => {
       >
         {/* left/top */}
         <Div full className="w-full lg:w-[65%]">
-          {cart == null ? <Emptycart /> : <ItemOnCart />}
+          {productInCart.length <= 1 ? (
+            <Emptycart />
+          ) : (
+            <ItemOnCart data={productInCart} />
+          )}
         </Div>
 
         {/* right/bottom */}
-        <Div full className='lg:w-[33%]'>
+        <Div full className="lg:w-[33%]">
           {/* kupomn code */}
           <Div
             flex
@@ -84,6 +93,7 @@ const Cart = () => {
         </Div>
       </Div>
     </Div>
-  );}
+  );
+};
 
 export default Cart;

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,14 +19,15 @@ import football from "../assets/item-showcase/football.jpg";
 import footwear from "../assets/item-showcase/footwear.jpg";
 import men from "../assets/item-showcase/men.jpg";
 import timans from "../assets/item-showcase/timnas.jpg";
+import { products } from "@/data/ProductData";
+import { twMerge } from "tailwind-merge";
 
 const showcase = [
-  {title : 'indonesia national team', photo:timans},
-  {title : 'footwear', photo:footwear},
-  {title : 'football club', photo:football},
-  {title : 'men', photo:men},
-]
-
+  { title: "indonesia national team", photo: timans },
+  { title: "footwear", photo: footwear },
+  { title: "football club", photo: football },
+  { title: "men", photo: men },
+];
 
 const slider = [
   "https://thumbor.sirclocdn.com/unsafe/1080x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/163c63fb-037c-4ffb-aabe-b9efc02704e2-XYCLOPS-SPEEDFREAK-WEB.jpg",
@@ -40,7 +41,11 @@ const slider = [
   "https://thumbor.sirclocdn.com/unsafe/720x/filters:quality(90):format(webp)/https://storage.googleapis.com/sirclo-prod-storefront/banners/7264d1bd-7878-44fc-b93d-822f7db177f5-BANNER-NERGETIC-WEB.jpg",
 ];
 
+const newProduct = products.slice(0, 4);
+const brands = products.slice(0, 4);
+
 export default function Home() {
+
   return (
     <>
       <Swiper
@@ -53,13 +58,19 @@ export default function Home() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="w-full bg-white min-h-64 md:min-h-[42vh] lg:min-h-[92vh]"
+        className="w-full bg-red-100 min-h-64 md:min-h-[42vh] lg:min-h-[92vh]"
       >
         {slider.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full bg-red-100 grid place-items-center text-3xl">
-              {/* <h1>{item}</h1> */}
-              <Image src={item} width={2000} height={1000} className="w-full object-cover"/>
+            <div className="w-[100vw] grid place-items-center text-3xl relative">
+              <Image
+                src={item}
+                width={2000}
+                height={1000}
+                sizes="100vw"
+                // fill
+                className="w-full h-auto object-cover"
+              />
             </div>
           </SwiperSlide>
         ))}
@@ -85,10 +96,14 @@ export default function Home() {
           <h1 className="text-xl">· NEW PRODUCT ·</h1>
 
           <div className="grid grid-cols-2 gap-3 gap-y-5 mt-8 w-full md:grid-cols-4 md:gap-5">
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            {newProduct.map((item, index) => (
+              <ItemProduct
+                key={index}
+                name={item.name}
+                price={item.price}
+                id={item.id}
+              />
+            ))}
           </div>
 
           <Button
@@ -116,17 +131,21 @@ export default function Home() {
           ))}
         </div>
       </Div>
-      
+
       {/* brands */}
       <Div center full className="mt-8">
         <div className="flex flex-col items-center mt-10 px-4 max-w-screen-maxxx">
           <h1 className="text-xl">· BRANDS ·</h1>
 
           <div className="grid grid-cols-2 gap-3 gap-y-5 mt-8 w-full md:grid-cols-4 md:gap-5">
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
-            <ItemProduct name={'MILLS Sepatu Olahraga Treximo Saga V2 Lime. Green / White / Black 9101206'} price={'499.900'} />
+            {brands.map((item, index) => (
+              <ItemProduct
+                key={index}
+                name={item.name}
+                price={item.price}
+                id={item.id}
+              />
+            ))}
           </div>
 
           <Button
@@ -140,12 +159,15 @@ export default function Home() {
       </Div>
     </>
   );
-}
+};
 
-const ItemMenu = ({ className, gamabr,text }) => {
+const ItemMenu = ({ className, gamabr, text }) => {
   return (
     <div
-      className={`w-full h-20 grid place-items-center uppercase relative cursor-pointer md:h-44 ${className}`}
+      className={twMerge(
+        "w-full h-20 grid place-items-center uppercase relative cursor-pointer md:h-44 ",
+        className
+      )}
     >
       <Link
         href={"/product"}

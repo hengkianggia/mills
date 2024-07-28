@@ -8,16 +8,15 @@ import Image from "next/image";
 
 import google from "../../../assets/image-logo/google.webp";
 import Title from "@/components/title component/Title";
+import { signup } from "@/lib/action";
 
 const Register = () => {
+
   return (
-    <Div
-      wrap
-      className="bg-gradient-to-b from-yellow-50 to-white"
-    >
+    <Div wrap className="bg-gradient-to-b from-yellow-50 to-white">
       <div className="w-full max-w-screen-maxxx px-4 flex flex-col items-center gap-10 md:px-20 lg:max-w-[55vw]">
         {/* title */}
-        <Title title={'Daftar'}/>
+        <Title title={"Daftar"} />
 
         {/* card */}
         <Div wrap>
@@ -30,34 +29,36 @@ const Register = () => {
             </p>
 
             {/* form */}
-            <div className={"w-full flex flex-col gap-6 mt-6"}>
+            <form action={signup} className={"w-full flex flex-col gap-6 mt-6"}>
               <Input
                 label={"Email"}
                 type={"email"}
+                name={"email"}
                 placeholder={"Email Anda"}
               />
               <Input
                 label={"Kata Sandi"}
                 type={"password"}
+                name={"password"}
                 placeholder={"Kata Sandi Anda"}
               />
-              <Input
+              {/* <Input
                 label={"Konfirmasi Kata Sandi"}
                 type={"password"}
                 placeholder={"Konfirmasi Kata Sandi Anda"}
-              />
-              <Input
+              /> */}
+              {/* <Input
                 label={"Nama lengkap"}
                 type={"text"}
                 placeholder={"Masukkan Nama Lengkap Anda"}
-              />
+              /> */}
 
               <Button
                 className={"bg-yellow-me mx-auto text-white w-full lg:max-w-48"}
               >
                 Daftar
               </Button>
-            </div>
+            </form>
 
             {/* bawah */}
             <div className="w-full flex flex-col items-center text-xs gap-4 mt-8 ">

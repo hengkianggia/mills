@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react'
 
 import Image from 'next/image'
@@ -5,13 +7,15 @@ import gambar from '../../assets/produk-photo/mills photo 1.webp'
 import gambar2 from '../../assets/produk-photo/mills photo 2.webp'
 import Button from '../button/Button';
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
 
-const ItemProduct = ({className, name, price, id=Math.floor(Math.random() * (1000 - 1 + 1)) + 1}) => {
+
+const ItemProduct = ({className, name, price, id}) => {
 const [image, setImage] =useState(gambar2)
 
   return (
     <div
-      className={`w-full h-full gap-2 group hover:shadow-lg transition-all ${className}`}
+      className={twMerge('w-full h-full gap-2 group hover:shadow-lg transition-all', className)}
     >
       <Link href={`/product/${id}`}>
         <Image
